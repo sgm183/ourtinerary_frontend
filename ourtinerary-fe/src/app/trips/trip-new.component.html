@@ -40,6 +40,13 @@
 		>
 		Submit
 		</button>
+		<div
+		[hidden]="!submitted"
+		class="alert alert-success"
+		role="alert"
+		>
+			Your trip has been created <a class="alert-link" routerLink="/trips/">View All Trips</a>
+		</div>
 	</form>
 </div>
 

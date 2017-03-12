@@ -23,13 +23,13 @@ export class TripNewComponent implements OnInit {
 	createTrip(trip) {
 		this.submitted = true;
 		this.tripService.createTrip(trip)
-			.subscribe(
-				data => { return true },
-				error => {
-					console.log("Error saving trip");
-					return Observable.throw(error);
-				}
-			)
+				.subscribe(
+					data => { return true },
+					error => {
+						console.log("Error saving trip");
+						return Observable.throw(error);
+					}
+				);
 	}
 	ngOnInit() {
   }
