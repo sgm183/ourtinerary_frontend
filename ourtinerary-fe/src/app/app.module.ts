@@ -3,18 +3,23 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { TripsComponent } from './trips/trips.component';
+import { TripNewComponent } from './trips/trip-new.component';
+import { TripShowComponent } from './trips/trip-show.component';
 
-import { AppRoutingModule } from './app-routing.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     TripsComponent,
-    HomepageComponent
+    HomepageComponent,
+    TripNewComponent,
+    TripShowComponent
   ],
   imports: [
     BrowserModule,

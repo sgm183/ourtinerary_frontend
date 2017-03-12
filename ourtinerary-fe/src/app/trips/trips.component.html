@@ -1,5 +1,6 @@
 <h1>Trips List Page</h1>
 
 <div *ngFor="let trip of trips">
-	{{trip.id}} - {{trip.name}}
+<a routerLink="/trip/{{trip.id}}">
+	{{trip.id}} - {{trip.name}} - {{trip.destination}}</a>
 </div>
