@@ -1,5 +1,7 @@
-<h1>Trip Show Page</h1>
-
-<div>
-	The id for this trip is: {{id}}
+<div class="container">
+	<div *ngIf="trip" class="card trip-show-card">
+		<h1>{{trip.name}}</h1>
+		<h3>{{trip.destination}}</h3>
+		
+	</div>
 </div>

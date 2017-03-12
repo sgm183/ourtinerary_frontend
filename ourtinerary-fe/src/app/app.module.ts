@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -10,6 +11,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { TripsComponent } from './trips/trips.component';
 import { TripNewComponent } from './trips/trip-new.component';
 import { TripShowComponent } from './trips/trip-show.component';
+import { TripService } from './trips/trip.service';
 
 
 
@@ -27,7 +29,9 @@ import { TripShowComponent } from './trips/trip-show.component';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    TripService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

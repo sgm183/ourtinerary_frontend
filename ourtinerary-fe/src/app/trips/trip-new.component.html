@@ -1,10 +1,11 @@
 <h1>Create a New Trip</h1>
 
 <div>
-	<form #tripform="ngForm">
+	<form (ngSubmit)="createTrip(trip)" #tripForm="ngForm">
 		<div class="form-group">
 			<label for="name">trip name</label>
 				<input type="text"
+					class="form-control"
 					id="name"
 					placeholder="name your trip"
 					required
@@ -12,7 +13,7 @@
 					#name='ngModel'
 					[(ngModel)]="trip.name"
 			>
-			<div [hidden]="name.valid || name.pristine">
+			<div [hidden]="name.valid || name.pristine" class="alert alert-danger">
 				trip name is required
 			</div>
 
@@ -20,6 +21,7 @@
 		<div class="form-group">
 			<label for="destination">destination</label>
 				<input type="text"
+					class="form-control"
 					id="destination"
 					placeholder="enter your destination" 
 					required
@@ -27,10 +29,17 @@
 					#destination='ngModel'
 					[(ngModel)]="trip.destination"
 			>
-			<div [hidden]="destination.valid || destination.pristine">
+			<div [hidden]="destination.valid || destination.pristine" class="alert alert-danger">
 				destination is required
 			</div>
 		</div>
+		<button type="submit"
+			class="btn btn-outline-info btn-lg"
+			[disabled]="!tripForm.form.valid"
+			[hidden]="submitted"
+		>
+		Submit
+		</button>
 	</form>
 </div>
 

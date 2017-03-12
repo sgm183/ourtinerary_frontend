@@ -1,21 +1,42 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Observable } from 'rxjs/Rx';
 import { Trip } from './trip';
+import { TripService } from './trip.service';
 
 @Component({
 	moduleId: module.id,
 	selector: 'app-trips',
 	templateUrl: './trips.component.html',
-	styleUrls: ['./trips.component.css']
+	styleUrls: ['./trips.component.css'],
+  providers: [ TripService ]
 })
 export class TripsComponent implements OnInit {
+  trips: Trip[];
+  errorMessage: string;
+  mode = "Observable";
 
-  tripOne: Trip = new Trip(1, 'Trip Name 1', 'Trip Destination 1')
-  tripTwo: Trip = new Trip(2, 'Trip Name 2', 'Trip Destination 2')
-  tripThree: Trip = new Trip(3, 'Trip Name 3', 'Trip Destination 3')
-
-  trips: Trip[] = [this.tripOne, this.tripTwo, this.tripThree]
+  constructor(
+    private tripService: TripService,
+    private router: Router
+  ) {}
 
   ngOnInit() {
+    let timer = Observable.timer(0, 5000);
+    timer.subscribe(() => this.getTrips());
+  };
+
+  getTrips() {
+    this.tripService.getTrips()
+        .subscribe(
+          trips => this.trips = trips,
+          error => this.errorMessage = <any>error
+        )
+  }
+
+  goToShow(trip: Trip): void {
+    let link = ['/trip', trip.id];
+    this.router.navigate(link);
   }
 
 }
