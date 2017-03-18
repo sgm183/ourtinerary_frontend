@@ -12,16 +12,20 @@ import { TripsComponent } from './trips/trips.component';
 import { TripNewComponent } from './trips/trip-new.component';
 import { TripShowComponent } from './trips/trip-show.component';
 import { TripService } from './trips/trip.service';
+import { UsersComponent } from './users/users.component';
+import { UserNewComponent } from './users/user-new.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    TripsComponent,
     HomepageComponent,
+    TripsComponent,
     TripNewComponent,
-    TripShowComponent
+    TripShowComponent,
+    UsersComponent,
+    UserNewComponent
   ],
   imports: [
     BrowserModule,
