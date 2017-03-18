@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+import { Angular2TokenService } from 'angular2-token';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -34,6 +36,7 @@ import { UserNewComponent } from './users/user-new.component';
     AppRoutingModule
   ],
   providers: [
+    Angular2TokenService,
     TripService
   ],
   bootstrap: [AppComponent]
