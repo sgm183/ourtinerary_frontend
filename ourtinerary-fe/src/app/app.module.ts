@@ -16,6 +16,7 @@ import { TripShowComponent } from './trips/trip-show.component';
 import { TripService } from './trips/trip.service';
 import { UsersComponent } from './users/users.component';
 import { UserNewComponent } from './users/user-new.component';
+import { UserNewSessionComponent } from './users/user-new-session.component';
 
 
 
@@ -27,7 +28,8 @@ import { UserNewComponent } from './users/user-new.component';
     TripNewComponent,
     TripShowComponent,
     UsersComponent,
-    UserNewComponent
+    UserNewComponent,
+    UserNewSessionComponent
   ],
   imports: [
     BrowserModule,

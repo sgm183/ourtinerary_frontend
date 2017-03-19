@@ -9,11 +9,12 @@ import { User } from './user';
 })
 export class UserNewComponent implements OnInit {
 
-	model = new User('', '', '');
-
+  model = new User('', '', '');
+  
   constructor(private _tokenService: Angular2TokenService) { 
   	this._tokenService.init({
-  		registerAccountPath: 'http://localhost:3002/auth'
+  		registerAccountPath: 'http://localhost:3002/auth',
+      validateTokenPath: 'http://localhost:3002/auth/validate_token'
   	});
   }
 
@@ -22,10 +23,10 @@ export class UserNewComponent implements OnInit {
 
   register() {
   	this._tokenService.registerAccount({
-		email: this.model.email,
-		password: this.model.password,
-		passwordConfirmation: this.model.passwordConfirmation
-	});
+  		email: this.model.email,
+  		password: this.model.password,
+  		passwordConfirmation: this.model.passwordConfirmation
+	  });
   }
 
 }

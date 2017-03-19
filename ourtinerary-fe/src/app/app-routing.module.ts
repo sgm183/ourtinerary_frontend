@@ -8,6 +8,7 @@ import { TripNewComponent } from './trips/trip-new.component';
 import { TripShowComponent } from './trips/trip-show.component';
 
 import { UserNewComponent } from './users/user-new.component';
+import { UserNewSessionComponent } from './users/user-new-session.component';
 
 const routes: Routes = [
 	{ path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -15,7 +16,8 @@ const routes: Routes = [
 	{ path: 'trips', component: TripsComponent },
 	{ path: 'trips/new', component: TripNewComponent },
 	{ path: 'trip/:id', component: TripShowComponent },
-	{ path: 'users/new', component: UserNewComponent },
+	{ path: 'sign-up', component: UserNewComponent },
+	{ path: 'sign-in', component: UserNewSessionComponent }
 ]
 
 @NgModule({
